@@ -45,7 +45,6 @@ class Home(webapp2.RequestHandler):
     return self.response.write(jsonify({'id' : tinyurl}))
 
 class GetUrl(webapp2.RequestHandler):
-
   def get(self, id):
     key = ndb.Key('Url', id)
     entity = key.get()
@@ -56,7 +55,7 @@ class GetUrl(webapp2.RequestHandler):
         return self.response.write(url)
         #return webapp2.redirect(url, abort=True)
     else:
-      self.response.write('url does not exist')
+      return self.response.write('url does not exist')
 
   def post(self):
     return self.response.write('no posting')
