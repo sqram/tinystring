@@ -55,8 +55,8 @@ class GetUrl(webapp2.RequestHandler):
         url = 'http://' + url
         return self.response.write(url)
         #return webapp2.redirect(url, abort=True)
-      else:
-        self.response.write('url does not exist')
+    else:
+      self.response.write('url does not exist')
 
   def post(self):
     return self.response.write('no posting')
