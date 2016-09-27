@@ -47,18 +47,12 @@ class Home(webapp2.RequestHandler):
 class GetUrl(webapp2.RequestHandler):
   def get(self, id):
     key = ndb.Key('Url', id)
-    print 'key is %s' % key
     entity = key.get()
-
-    print 'entity is %s' % entity
     if entity:
       url = entity.url
-      print 'url is %s' % url
       if url[:4].lower() != 'http':
         url = 'http://' + url
-        print 'url now is %s' % url
-        #return self.response.write(url)
-        return webapp2.redirect(url, abort=True)
+      return webapp2.redirect(url, abort=True)
     else:
       return self.response.write('url does not exist')
 
