@@ -31,7 +31,8 @@ class Home(webapp2.RequestHandler):
         url = entity.url
         if url[:4].lower() != 'http':
           url = 'http://' + url
-          return webapp2.redirect(url, abort=True)
+          return self.response.write(url)
+          #return webapp2.redirect(url, abort=True)
       else:
         self.response.write('url does not exist')
     self.response.write('this shouldnt happen')
