@@ -4,6 +4,7 @@ from mkid import mkid
 
 from json import dumps as jsonify
 from json import loads as unjsonify
+from os.path import dirname
 
 import jinja2
 import webapp2
