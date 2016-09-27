@@ -50,7 +50,7 @@ class GetUrl(webapp2.RequestHandler):
     print 'key %s' % key
     entity = key.get()
     print 'entity %s' % entity
-    if entity:
+    if entity != None:
       url = entity.url
       if url[:4].lower() != 'http':
         url = 'http://' + url
