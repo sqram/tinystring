@@ -21,22 +21,10 @@ jinja_env = jinja2.Environment(
 
 
 class Home(webapp2.RequestHandler):
-  def get(self, id):
-    if not id:
-      template = jinja_env.get_template('index.html')
-      self.response.write(template.render())
-    else:
-      key = ndb.Key('Url', id)
-      entity = key.get()
-      if entity:
-        url = entity.url
-        if url[:4].lower() != 'http':
-          url = 'http://' + url
-          return self.response.write(url)
-          #return webapp2.redirect(url, abort=True)
-      else:
-        self.response.write('url does not exist')
-    self.response.write('this shouldnt happen')
+  def get(self):
+
+    template = jinja_env.get_template('index.html')
+    self.response.write(template.render())
 
 
 
@@ -56,34 +44,28 @@ class Home(webapp2.RequestHandler):
     del url
     return self.response.write(jsonify({'id' : tinyurl}))
 
-# class GetUrl(webapp2.RequestHandler):
+class GetUrl(webapp2.RequestHandler):
 
-#   def get(self):
-#     print 'we get home'
+  def get(self, id):
+    key = ndb.Key('Url', id)
+    entity = key.get()
+    if entity:
+      url = entity.url
+      if url[:4].lower() != 'http':
+        url = 'http://' + url
+        return self.response.write(url)
+        #return webapp2.redirect(url, abort=True)
+      else:
+        self.response.write('url does not exist')
 
-#     return self.response.write('%s' % tinyurl)
-
-#   def post(self):
-#     self.response.headers.add_header('Access-Control-Allow-Origin', '*')
-#     longurl = self.request.get('longurl')
-#     tinyurl = mkid(cannot_be = ['api', 'contact', 'about', 'login'])
-#     if ndb.Key('Url', tinyurl).get() is not None:
-#       return
-#       # tinyurl id exists
-
-#     url = Url()
-#     url.url = longurl
-#     url.tinyurl = tinyurl
-#     url.ip = self.request.remote_addr
-#     url.key = ndb.Key(Url, tinyurl)
-#     url.put()
-#     del url
-#     return self.response.write(jsonify({'id' : tinyurl}))
+  def post(self):
+    return self.response.write('no posting')
 
 
 
 routes = [
-  ('/(.+)?', Home)
+  ('/', Home),
+  ('/(.+)?', GetUrl)
 
 ]
 
