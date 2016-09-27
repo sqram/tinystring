@@ -1,0 +1,254 @@
+/* CSS Document */
+
+body {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	color: #ADADAD;
+	font-size:13px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+
+	line-height: 20px;
+	background: #D8EBE9;	
+}
+
+
+
+
+
+/* Layout
+--------------------------------*/
+.container {
+	width: 900px;
+	margin: auto;
+	text-align: left;
+	
+}
+
+.header {
+	height: 135px;
+	position: relative;
+}
+
+.menu {
+	overflow: auto;
+	border-bottom: 0px solid #000;
+	letter-spacing: 1px;
+	font-weight: bold;
+	height: 40px;
+	-moz-box-shadow: 0px 0px 5px #000;
+	background:url(../../images/themes/blue/bg-menu.jpg);
+}
+
+.middle {
+	padding: 25px;
+	-moz-box-shadow: 0px 0px 5px #000;
+
+	line-height: 20px;
+	/*font-family: Georgia, "Times New Roman", Times, serif; letter-spacing: 1px;*/
+	position: relative;
+	background: url(../../images/themes/blue/bg-middle.jpg) #E9E5E2;	
+}
+
+.footer {
+	clear: both;
+	padding: 20px 0 0 10px;
+	color: #837D7B;
+}
+
+
+/* Inner divs
+--------------------------------*/
+.target {
+	color: #fff;
+	display: none;
+	width: 70%;	
+}
+
+div.text {
+	
+	overflow: auto;
+
+}
+
+
+/* Links & Lists & spans
+--------------------------------*/
+.menu ul {
+	list-style: none;
+	margin: 0 0 0 15px;;
+	padding: 0 0 0 15px;	
+}
+
+.menu li {
+	display: inline;	
+}
+
+.menu a {
+	color: #666;
+	float: left;
+	font-size: 14px;
+	height: 42px;
+	text-shadow: 1px 1px 1px #000;
+	line-height: 42px;
+	padding: 0 15px;
+	text-decoration: none;
+}
+
+.menu a:hover {	
+	background: url(../../images/themes/blue/menu-arrow.png) no-repeat scroll center bottom transparent	;	
+}
+
+.menu a:active {
+	color: #fff;	
+}
+
+.middle a {
+	text-decoration: none;	
+	color: #C93D3E;
+}
+
+.middle a:hover {
+	color: #D94F4F;	
+}
+
+.project-links {
+	width: 200px;
+	z-index:5;
+	float: right;
+	border-left: 1px solid #444;
+	padding: 0 0 5px 10px;
+
+}
+
+.project-links a:hover {
+	background: #C93D3E;
+	color: #333;
+}
+
+.project-links ul, .project-links li {
+	margin: 0;
+	padding: 0;
+	list-style: none;	
+}
+
+.project-links a {
+	display: block;
+	padding: 0 0 0 2px;
+	border-bottom: 1px solid #444;	
+}
+
+/* Images and texts
+--------------------------------*/
+.red {
+	color: #DA5B23;	
+}
+
+.ribbon-top {
+	width:	 118px;
+	height: 47px;
+	position: absolute;
+	bottom:0;
+	z-index: -1;
+	left: 50px;
+
+	background: url(../../images/themes/blue/ribbon-top.png);
+}
+
+.ribbon-bottom {
+	width:	 118px;
+	height: 186px;
+	position: absolute;
+	bottom: -150px;;
+	left: 50px;
+	background: url(../../images/themes/blue/ribbon-bottom.png);
+}
+
+h1, h2 {
+margin: 0 0 20px 0;	
+}
+
+
+/* Forms
+--------------------------------*/
+.input-text {
+	margin-bottom: 20px;
+	float: left;
+	background: #222;
+	border: 1px solid #333;
+	padding:  5px;
+	font-size: 14px;
+	letter-spacing: 1px;
+	font-weight: bold;
+	color: #ccc;
+	height: 30px;
+	font-family: Gothic;
+}
+
+.input-textarea {
+	float: right;
+	top: 0;
+	height: 125px;
+	background: #222;
+	border: 1px solid #333;
+	
+	width: 350px!important;
+	color: #ccc;
+	font-family: Gothic;
+	font-size: 12px;
+	
+}
+
+label {
+	color: #24A4B3;
+	display: block;
+}
+
+.button {
+
+}
+
+.button:hover {
+	background: #D94F4F;
+}
+
+
+/* Notifications
+--------------------------------*/
+.input-error {
+	background: #F9DDDD;
+	border:1px solid #DE7676;
+	color:#333333;
+}
+
+.success {
+	background: #D5FFDB;
+	border:3px solid #81B872;
+	color:#333333;
+	font-weight:bold;
+	margin-bottom:20px;
+	padding:20px;
+	text-align:center;
+}
+
+.error {
+	background: #F9DDDD;
+	border:3px solid #DE7676;
+	clear:both;
+	color:#333333;
+	font-weight:bold;
+	margin-bottom:20px;
+	padding:20px;
+	text-align:center;
+}
+
+
+/* HTML
+--------------------------------*/
+
+td { vertical-align: top; }
+
+/* Misc
+--------------------------------*/
+.right { float: right; }
+* {outline: none }

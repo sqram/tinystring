@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Untitled Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/base.css" />
+    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <main>
+      <h1>tinystr.in</h1>
+      <section>
+        <p>
+          tinystr.in (tiny string) is a super basic, simple &amp; free
+          url shortener
+        </p>
+        <form>
+          <h1>Shorten this link:</h1>
+          <label>
+            <input type="text" placeholder='http://' id="longurl">
+            <input type="submit" value="ok go">
+          </label>
+          <div class="result">
+            <p>Your link:</p>
+            <input type="text">
+          </div>
+        </form>
+      </section>
+    </main>
+
+  <script>
+  document.querySelector('form').addEventListener('submit', function(e) {
+    e.preventDefault()
+    var longurl  = document.querySelector('#longurl').value
+    if (longurl.length < 5) return
+
+    var formdata= new FormData()
+    formdata.append('longurl', longurl)
+
+    var req = new XMLHttpRequest()
+    req.addEventListener('load', requestComplete)
+    req.open("POST", 'http://tinystr.in')
+    //req.open("POST", 'http://localhost:8080')
+    req.send(formdata)
+
+    function requestComplete() {
+      document.querySelector('.result input').value = this.responseText
+      document.querySelector('.result').style.visibility = 'visible'
+    }
+
+  })
+  </script>
+  </body>
+</html>

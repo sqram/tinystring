@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Tinystr.in - url shortener</title>
+    <meta name="description" content="url shortener">
+    <link rel="stylesheet" type="text/css" href="/static/css/base.css" />
+    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+    <link rel="shortcut icon" href="/static/assets/favicon.ico">
+  </head>
+
+  <body>
+    <main>
+      <h1>tinystr.in</h1>
+      <section>
+        <p>
+          tinystr.in (tiny string) is a super basic, simple &amp; free
+          url shortener
+        </p>
+        <form>
+          <h1>Shorten this link:</h1>
+          <label>
+            <input type="text" placeholder='http://' id="longurl">
+            <input type="submit" value="go">
+          </label>
+          <div class="result">
+            <p>Your link:</p>
+            <input type="text">
+          </div>
+        </form>
+      </section>
+    </main>
+
+  <script>
+  document.querySelector('form').addEventListener('submit', function(e) {
+    e.preventDefault()
+    var longurl  = document.querySelector('#longurl').value
+    if (longurl.length < 5) return
+
+    var formdata= new FormData()
+    formdata.append('longurl', longurl)
+
+    var req = new XMLHttpRequest()
+    req.addEventListener('load', requestComplete)
+    req.open("POST", window.location.origin)
+    //req.open("POST", 'http://localhost:8080')
+    req.send(formdata)
+
+    function requestComplete() {
+      var shorturl =  window.location.origin + '/' + JSON.parse(this.responseText).id
+      document.querySelector('.result input').value = shorturl
+      document.querySelector('.result').style.visibility = 'visible'
+      document.querySelector('.result input').select()
+    }
+  })
+
+  // When input field is clicked, select text (easier copy/cut)
+  document.querySelector('.result input').addEventListener('click', function(e) {
+
+  })
+  </script>
+  </body>
+</html>

@@ -1,0 +1,198 @@
+/* CSS Document */
+@font-face { font-family: Gothic; src: url('/GOTHIC.ttf'); }
+@font-face { font-family: Batik; src: url('/Batik.ttf'); }
+body {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	color: #36322B;
+	font-size: 13px;
+	font-family: Gothic;
+	background: url(../../images/themes/greyish/bg-body.jpg) #fff;	
+}
+
+
+
+
+
+/* Layout
+--------------------------------*/
+.container {
+	width: 800px;
+	margin: auto;
+	text-align: left
+}
+
+.header {
+	height: 135px;
+	position: relative;
+}
+
+.menu {
+	height: 42px;
+	font-size: 12px;
+	border-bottom: 1px solid #fff;
+	letter-spacing: 1px;
+	-moz-border-radius-topright: 12px;
+	-moz-border-radius-topleft: 12px;
+	background: #141313;
+}
+
+.middle {
+	padding: 25px;
+	position: relative;
+	background: url(../../images/themes/greyish/bg-middle.gif) #E9E5E2;	
+}
+
+.footer {
+	clear: both;
+	padding: 20px 0 0 10px;
+	color: #837D7B;
+}
+
+
+/* Inner divs
+--------------------------------*/
+.welcome-box {
+	width: 450px;
+	border: 1px solid #fff;
+	-moz-border-radius: 7px;
+	padding: 15px;
+	line-height: 20px;
+	text-align: justify;
+	-moz-box-shadow: 0 0 10px #999;	
+	text-shadow:1px 1px 1px #fff;
+}
+
+div.text {
+	width: 60%;
+	text-align: justify;
+	text-shadow:1px 1px 1px #fff	
+}
+
+
+/* Links & Lists & spans
+--------------------------------*/
+.menu ul {
+	list-style: none;
+	margin: 0;
+	padding: 0 0 0 15px;	
+}
+
+.menu li {
+	display: inline;	
+}
+
+.menu a {
+	color: #fff;
+	float: left;
+	font-size: 14px;
+	height: 42px;
+	line-height: 42px;
+	padding: 0 15px;
+	text-decoration: none;
+}
+
+.menu a:active, .menu a:hover {
+	background: url("../../images/menu_bullet.gif") no-repeat scroll center bottom transparent	;	
+}
+
+.middle a {
+	text-decoration: none;	
+	color: #C93D3E;
+}
+
+.middle a:hover {
+	color: #D94F4F;	
+}
+
+
+
+
+/* Images and texts
+--------------------------------*/
+.red {
+	color: #DA5B23;	
+}
+
+.ribbon-top {
+	width:	 118px;
+	height: 47px;
+	position: absolute;
+	bottom:0;
+	right: 50px;
+	background: url(../../images/themes/greyish/ribbon-top.png);
+}
+
+.ribbon-bottom {
+	width:	 118px;
+	height: 186px;
+	position: absolute;
+	bottom: -100px;;
+	right: 50px;
+	background: url(../../images/themes/greyish/ribbon-bottom.png);
+}
+
+/* HTML
+--------------------------------*/
+h1, h3 {
+	color: #24A4B3;	
+	margin: 0 0 20px;
+	padding: 0;
+	text-shadow:1px 1px 1px #fff;
+}
+
+
+/* Forms
+--------------------------------*/
+.input-text {
+	margin-bottom: 20px;
+	float: left;
+	background: #222;
+	border: 1px solid #333;
+	padding:  5px;
+	font-size: 14px;
+	letter-spacing: 1px;
+	font-weight: bold;
+	color: #ccc;
+	height: 30px;
+	font-family: Gothic;
+}
+
+.input-textarea {
+	float: right;
+	top: 0;
+	height: 125px;
+	background: #222;
+	border: 1px solid #333;
+	
+	width: 350px!important;
+	color: #ccc;
+	font-family: Gothic;
+	font-size: 12px;
+	
+}
+
+label {
+	color: #24A4B3;
+	display: block;
+}
+
+.button {
+	padding: 5px 20px;
+	background: #C93D3E;
+	border: none;
+	-moz-border-radius: 7px;
+
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+
+.button:hover {
+	background: #D94F4F;
+}
+
+
+/* Misc
+--------------------------------*/
+.right { float: right; }

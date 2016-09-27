@@ -1,0 +1,42 @@
+* run gcloud init
+* https://cloud.google.com/source-repositories/docs/quickstart
+
+--------------------------------------------
+If building SPA, delete
+- templates/
+- create index.html in src
+--------------------------------------------
+
+
+change:
+--------------------------------------------
+- main.py
+in BaseHandler, the session name
+
+- base.html
+head info (title, etc)
+
+- package.json
+project name, git repo, etc
+
+
+
+Killing proc on port:
+--------------------------------------------
+sudo fuser -n tcp <port>
+sudo kill -9 <id>
+
+
+ACL
+--------------------------------------------
+https://cloud.google.com/storage/docs/access-control/create-manage-lists#defaultobjects
+
+https://cloud.google.com/storage/docs/gsutil/commands/defacl
+gsutil defacl ch -u AllUsers:R gs://example-bucket
+
+
+Libraries
+--------------------------------------------
+Libraries supported by GAE must be listed in app.yaml
+Other libraries must be installed to 'lib' folder with
+pip2.7 install --target=lib jinja2
