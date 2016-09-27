@@ -47,7 +47,9 @@ class Home(webapp2.RequestHandler):
 class GetUrl(webapp2.RequestHandler):
   def get(self, id):
     key = ndb.Key('Url', id)
+    print 'key %s' % key
     entity = key.get()
+    print 'entity %s' % entity
     if entity:
       url = entity.url
       if url[:4].lower() != 'http':
