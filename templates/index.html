@@ -33,44 +33,47 @@
       </section>
     </main>
 
-  <script>
-  var bgs = [
-    'bubbles_reduced.jpg',
-    'crystals_reduced.jpg',
-    'fuzz_reduced.jpg',
-    'mountains_reduced.jpg',
-    'raindrops_reduced.jpg',
-    'windy_reduced.jpg'
-  ]
-  var random = parseInt(Math.random() * (6 - 0) + 0)
-  var bg = bgs[random]
-  document.body.style.background =  'url(/static/assets/img/bg/' + bg + ') #D7EAE8 top center no-repeat'
-  document.querySelector('form').addEventListener('submit', function(e) {
-    e.preventDefault()
-    var longurl  = document.querySelector('#longurl').value
-    if (longurl.length < 5) return
+    <script>
+    var bgs = [
+      //'bubbles_reduced.jpg',
+      'crystals_reduced.jpg',
+      //'fuzz_reduced.jpg',
+      'mountains_reduced.jpg',
+      'raindrops_reduced.jpg',
+      'windy_reduced.jpg'
+    ]
+    var random = parseInt(Math.random() * (3 - 0) + 0)
+    var bg = bgs[random]
+    document.body.style.backgroundImage =  'url(/static/assets/img/bg/' + bg + ')'
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault()
+      var longurl  = document.querySelector('#longurl').value
+      if (longurl.length < 5) return
 
-    var formdata= new FormData()
-    formdata.append('longurl', longurl)
+      var formdata= new FormData()
+      formdata.append('longurl', longurl)
 
-    var req = new XMLHttpRequest()
-    req.addEventListener('load', requestComplete)
-    req.open("POST", window.location.origin)
-    //req.open("POST", 'http://localhost:8080')
-    req.send(formdata)
+      var req = new XMLHttpRequest()
+      req.addEventListener('load', requestComplete)
+      req.open("POST", window.location.origin)
+      //req.open("POST", 'http://localhost:8080')
+      req.send(formdata)
 
-    function requestComplete() {
-      var shorturl =  window.location.origin + '/' + JSON.parse(this.responseText).id
-      document.querySelector('.result input').value = shorturl
-      document.querySelector('.result').style.visibility = 'visible'
-      document.querySelector('.result input').select()
-    }
-  })
+      function requestComplete() {
+        var shorturl =  window.location.origin + '/' + JSON.parse(this.responseText).id
+        document.querySelector('.result input').value = shorturl
+        document.querySelector('.result').style.visibility = 'visible'
+        document.querySelector('.result input').select()
+      }
+    })
 
-  // When input field is clicked, select text (easier copy/cut)
-  document.querySelector('.result input').addEventListener('click', function(e) {
-
-  })
-  </script>
+    // Google
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-76274804-4', 'auto');
+    ga('send', 'pageview');
+    </script>
   </body>
 </html>
