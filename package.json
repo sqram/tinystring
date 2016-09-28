@@ -1,7 +1,7 @@
 {
-  "name": "regexbox.com",
+  "name": "tinystr.in",
   "version": "1.1.0",
-  "description": "regex repository",
+  "description": "url shortener",
   "private": true,
   "license": "Apache Version 2.0",
   "author": "Google Inc.",

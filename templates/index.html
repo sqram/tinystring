@@ -14,8 +14,10 @@
       <h1>tinystr.in</h1>
       <section>
         <p>
+          <img src="/static/assets/img/blue/ribbon-top.png" alt="">
           tinystr.in (tiny string) is a super basic, simple &amp; free
           url shortener
+          <img src="/static/assets/img/blue/ribbon-bottom.png" alt="">
         </p>
         <form>
           <h1>Shorten this link:</h1>
@@ -32,6 +34,17 @@
     </main>
 
   <script>
+  var bgs = [
+    'bubbles_reduced.jpg',
+    'crystals_reduced.jpg',
+    'fuzz_reduced.jpg',
+    'mountains_reduced.jpg',
+    'raindrops_reduced.jpg',
+    'windy_reduced.jpg'
+  ]
+  var random = parseInt(Math.random() * (6 - 0) + 0)
+  var bg = bgs[random]
+  document.body.style.background =  'url(/static/assets/img/bg/' + bg + ') #D7EAE8 top center no-repeat'
   document.querySelector('form').addEventListener('submit', function(e) {
     e.preventDefault()
     var longurl  = document.querySelector('#longurl').value

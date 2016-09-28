@@ -1,7 +1,7 @@
 body
-  background #D7EAE8
-  background url('../assets/img/crystals.jpg')
+  background url('../assets/img/bg/mountains_reduced.jpg') #D7EAE8 top center no-repeat
   background-size cover
+  background-attachment fixed
   margin 0
   padding 0
   font-family courgette
@@ -16,14 +16,30 @@ main
 section
   margin-top 13%
   padding 2em
-  background url('../assets/img/blue/bg-middle.jpg')
+  background url('../assets/img/noise.png')
+  //background url(http://api.thumbr.it/whitenoise-100x100.png?background=000000&noise=626262&density=70&opacity=21)
   color #999
   border-top 30px solid
-  border-image url('../assets/img/blue/bg-menu.jpg') 30 30 repeat
+  //border-image url('../assets/img/blue/bg-menu.jpg') 30 30 repeat
+  border-image url('../assets/img/topnoise.jpg') 30 30 repeat
+  //border-image url('http://api.thumbr.it/whitenoise-50x50.png?background=000000&noise=999999&density=100&opacity=40') 40 0 repeat
+
 
   p
     width 29%
     text-align justify
+    position relative
+    img:first-of-type
+      position absolute
+      left 20%
+      top -124.9px
+      box-shadow 0px 5px 5px alpha(black,20%)
+    img:last-of-type
+      position absolute
+      left 20%
+      top 70px
+
+
   form
     padding-left 50px
     box-sizing border-box
