@@ -39,15 +39,14 @@ class Home(webapp2.RequestHandler):
     url.url = longurl
     url.tinyurl = tinyurl
     url.ip = self.request.remote_addr
-    url.key = ndb.Key(Url, tinyurl)
+    #url.key = ndb.Key(Url, tinyurl)
     url.put()
     del url
     return self.response.write(jsonify({'id' : tinyurl}))
 
 class GetUrl(webapp2.RequestHandler):
-  def get(self, id):
-    key = ndb.Key('Url', id)
-    entity = key.get()
+  def get(self, tinyurl):
+    entity = Url.query(Url.tinyurl == tinyurl).get() 
     if entity:
       url = entity.url
       if url[:4].lower() != 'http':
@@ -64,7 +63,6 @@ class GetUrl(webapp2.RequestHandler):
 routes = [
   ('/', Home),
   ('/(.+)?', GetUrl)
-
 ]
 
 conf = {
