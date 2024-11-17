@@ -30,7 +30,7 @@ class Home(webapp2.RequestHandler):
     longurl = self.request.get('longurl')
     tinyurl = mkid(cannot_be = ['api'])
     if ndb.Key('Url', tinyurl).get() is not None:
-      return self.response.write("url already exists. my bad. bug in code i'm not willing to fix for this 1 day project.")
+      return self.response.write("url already exists. my bad. bug in code i'm not willing to fix for this tiny project.")
 
     url = Url()
     url.url = longurl
