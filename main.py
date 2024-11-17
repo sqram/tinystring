@@ -26,14 +26,11 @@ class Home(webapp2.RequestHandler):
     template = jinja_env.get_template('index.html')
     self.response.write(template.render())
 
-
-
   def post(self, id=None):
-    #self.response.headers.add_header('Access-Control-Allow-Origin', '*')
     longurl = self.request.get('longurl')
-    tinyurl = mkid(cannot_be = ['api', 'contact', 'about', 'login'])
+    tinyurl = mkid(cannot_be = ['api'])
     if ndb.Key('Url', tinyurl).get() is not None:
-      return self.response.write('url already exists. my bad.')
+      return self.response.write("url already exists. my bad. bug in code i'm not willing to fix for this 1 day project.")
 
     url = Url()
     url.url = longurl
