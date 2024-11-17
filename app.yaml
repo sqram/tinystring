@@ -3,7 +3,6 @@
 # https://developers.google.com/appengine/docs/python/config/appconfig
 # for details.
 
-
 runtime: python27
 api_version: 1
 threadsafe: yes
@@ -18,16 +17,8 @@ handlers:
   static_files: static/assets/favicon.ico
   upload: static/assets/favicon.ico
 
-
 - url: /.*
   script: main.app
-
-
-
-
-
-
-
 
 skip_files:
 - node_modules

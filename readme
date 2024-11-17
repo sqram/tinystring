@@ -8,22 +8,10 @@ If building SPA, delete
 --------------------------------------------
 
 
-change:
---------------------------------------------
-- main.py
-in BaseHandler, the session name
-
-- base.html
-head info (title, etc)
-
-- package.json
-project name, git repo, etc
-
-
 
 Killing proc on port:
 --------------------------------------------
-sudo fuser -n tcp <port>
+sudo fuser -n tcp <port>  
 sudo kill -9 <id>
 
 
