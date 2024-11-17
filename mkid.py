@@ -1,14 +1,12 @@
 # Random ID generator
-# Python version of https://github.com/sqram/mkid
 
 import random
 
-def mkid(min_length=None, max_length=None, alphabet=None, cannot_be=None, cannot_start_with=None ):
-  min_length = min_length if min_length else 1
-  max_length = max_length if max_length else 8
-  alphabet = alphabet if alphabet else 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!&~-+_'
-  cannot_be = cannot_be if cannot_be else []
-  cannot_start_with = cannot_be if cannot_start_with else ''
+alphabet = 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!&~-+_'
+
+def mkid(min_length=1, max_length=8, alphabet=alphabet, cannot_be=[], cannot_start_with='' ):
+  if min_length > max_length:
+    min_length = max_length
 
   def _generate_id():
     random_length = random.randrange(min_length, max_length+1)
